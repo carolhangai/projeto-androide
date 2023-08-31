@@ -1,0 +1,213 @@
+@charset "UTF8";
+@import url('https://fonts.googleapis.com/css2? family= Bebas+Neue & family= Mr+Dafoe & display=swap'); /*fonte importada */
+@font-face {  /*fonte baixada */
+    font-family: 'Android';
+    src: url('../fontes/idroid.otf') format('opentype'); 
+    font-weight: normal;
+}
+
+/*o root é usado para aplicar uma variável. Aqui no caso vc poderá colocar o nome que quiser, depois a hora que usar a cor é só selecionar a cor desejada */
+:root{
+    --cor0: #c5ebd6;
+    --cor01:#83e1ad;
+    --cor02:#3ddc84;
+    --cor03:#2fa866;
+    --cor04:#1a5c37;
+    --cor05:#063d1e;
+
+    --fonte-padrao: 'Arial', Verdana, Helvetica, sans-serif;
+    --fonte-destaque: 'Bebas Neue', cursive, sem serifa;
+    --fonte-android: 'Android', cursive;
+}
+
+/*seletor global, ou seja, esta aplicação será valida para todos os elementos como body, p, h1, h2, etc */
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color:var(--cor01);
+    font-family: var(--fonte-padrao);
+}
+
+/*qualquer link(a) que for .externo vai ter essa configuracao */
+a.externo::after{
+    content: '\00A0\1F517';
+}
+
+/*configurações de cabecalho */
+header{
+    background-image: linear-gradient(to bottom, var(--cor02), var(--cor05));/* degrade cor cabecalho*/
+    min-width: 150px;
+    text-align: center;
+    padding-top: 40px;
+}
+/*configurações de do h1 do cabecalho */
+header > h1{
+    color: white;
+    font-family: var(--fonte-destaque);
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.514);
+}
+/*configurações do paragrafo do cabecalho */
+header > p {
+    font-family: var(--fonte-padrao);
+    font-size: 1.2em;
+    color: white;
+    max-width: 500px;
+    margin: auto;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 30px;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.514);
+}
+/*configurações do link/menu */
+nav{
+    background-color: var(--cor05);
+    padding: 10px;
+    box-shadow: 0px 7px 7px rgb(0, 0, 0, 0.315);
+}
+/*configurações do link do menu  */
+nav > a {
+    color: var(--cor01);
+    padding: 10px;/*espaço entre as palavras */
+    border-radius: 11px; /*arredonda a borda do hover */
+    text-decoration: none;
+    font-weight: bold; /*negrito */
+    transition-duration: 0.5s;
+}
+/*configurações do hover do link  */
+nav >a:hover {
+    background-color: var(--cor03);
+    color: var(--cor05);/* :hover possibilita um elemento ter o seu estilo alterado pela da ação do usuário, quando passa o cursor do mouse sobre o elemento. Ex:menu. */
+}
+/*configurações do main/principal  */
+main{
+    
+    min-width: 300px; /*largura minima do conteúdo/texto */
+    max-width: 1000px; /* largura maxima do conteúdo/texto*/
+    margin: auto; /*imagem se adpta ao tamanho da tela */
+    margin-bottom: 30px; /*um espaço no rodapé*/
+    padding: 20px; /* dá um recuo entre a margem*/
+    background-color: white;
+    box-shadow: 0px 0px 10px rgb(19, 17, 17);
+    border-bottom-left-radius: 10px ;/*arredondar */
+    border-bottom-right-radius:  10px;
+}
+/*configurações do h1 do main  */
+main h1{
+    color: var(--cor05);
+    font-family: var(--fonte-android);
+    background-image: linear-gradient(to right, var(--cor01), transparent);
+    text-indent: 8px;
+    
+}
+/*configurações  do h2 do main*/
+main h2{
+    font-family: var(--fonte-android);
+    color: var(--cor04);
+    font-size: 1.3em;
+    background-image: linear-gradient(to right, var(--cor01), transparent);/*vai fazer a linha até ficar transparente */
+    text-indent: 8px;
+}
+/*configurações do paragrafo do main  */
+main p{
+    margin: 15px 0px;/*espaço etre paragrafos e titulos */
+    text-align: justify;
+    text-indent: 30px; /*espaço paragrafo */
+    line-height: 1.8em;/*espaco entre linhas */
+    font-size: 1.2em; /*tamanho da fonte */
+}
+/*configurações do strong do main  */
+main strong{
+    color: var(--cor03);
+    font-weight: bold;
+}
+/*configurações  do link do main*/
+main a {
+    text-decoration:none ;
+    font-weight: bold;
+    color: var(--cor4);
+    background-color: var(--cor01);
+    padding: 2px 6px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.377);/*sombras */
+}
+/*configurações do hover do main */
+main a:hover{
+    text-decoration: underline;
+    color: var(--cor04);
+}
+/*configurações da imagens  */
+main img{
+    width: 100%; /*largura da imagem*/
+}
+/*configurações da img pequena do bugdroid*/
+main img.pequena{ /*'trava' a imagem em 50% */
+    max-width: 350px;/*a imagem não vai ultrapassar essa medida */
+    display: block;/*centraliza */
+    margin: auto;/*imagem se adapta ao tamanho da tela */
+}
+/*configurações da div do video */
+div.video {
+    background-color: var(--cor05); /*cor de fundo do video youtube  */
+    margin: 0px -20px 30px -20px; /*margem da cor de fundo video */
+    padding: 20px;
+    padding-bottom: 58%;/*"tamanho do video youtube"  */
+    position: relative; /*configuração video do youtube para centralizar  */
+}
+
+/*configurações do video youtube para que fique centralizado */
+div.video > iframe{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+/*configurações de aside  */
+aside{
+    background-color: var(--cor01);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.377);
+}
+/* configurações da h3 que estiver dentro de aside*/
+aside > h3{
+    background-color: var(--cor04);
+    color: white; /* cor da letra*/
+    padding: 10px;/*tamanho da caixa */
+    margin: -10px -10px 0px -10px;
+    border-radius: 10px 10px 0px 0px;/*arredondamento */
+}
+
+/*configuração de toda ul que estiver dentro de aside*/
+aside >ul{
+    list-style-type:'\2714\00A0\00A0'; /*2714 é o numero do emoji */
+    list-style-position: inside;   
+    columns: 2;
+    }
+
+/*configurações de footer */
+footer{
+    background-color: var(--cor05);
+    color: white;
+    text-align: center;
+    font-size: 1em;
+    padding: 5px;
+}
+/*configurações do link(a) do foooter */
+footer a{
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+/*configurações do link(a) com hover */
+footer a:hover{
+    text-decoration: underline;
+    color: var(--cor01);
+}
